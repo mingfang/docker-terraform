@@ -26,7 +26,8 @@ RUN wget https://releases.hashicorp.com/terraform/0.9.11/terraform_0.9.11_linux_
 FROM golang as build
 RUN mkdir -p $GOPATH/src/github.com/terraform-providers
 RUN cd $GOPATH/src/github.com/terraform-providers && \
-    git clone https://github.com/terraform-providers/terraform-provider-kubernetes.git
+    git clone --depth 1 https://github.com/mingfang/terraform-provider-kubernetes.git
+#COPY terraform-provider-kubernetes $GOPATH/src/github.com/terraform-providers/terraform-provider-kubernetes
 RUN cd $GOPATH/src/github.com/terraform-providers/terraform-provider-kubernetes && \
     make build
 
