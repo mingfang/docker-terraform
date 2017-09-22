@@ -18,7 +18,7 @@ RUN apt-get install -y --no-install-recommends vim less net-tools inetutils-ping
 
 RUN apt-get install -y graphviz
 
-RUN wget https://releases.hashicorp.com/terraform/0.9.11/terraform_0.9.11_linux_amd64.zip && \
+RUN wget https://releases.hashicorp.com/terraform/0.10.6/terraform_0.10.6_linux_amd64.zip && \
     unzip terraform*.zip && \
     rm terraform*.zip && \
     mv terraform /usr/local/bin
