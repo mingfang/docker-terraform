@@ -23,6 +23,11 @@ RUN wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_
     rm terraform*.zip && \
     mv terraform /usr/local/bin
 
+RUN wget https://releases.hashicorp.com/packer/1.1.0/packer_1.1.0_linux_amd64.zip && \
+    unzip packer*.zip && \
+    rm packer*.zip && \
+    mv packer /usr/local/bin
+
 ARG BUILD_INFO
 LABEL BUILD_INFO=$BUILD_INFO
 
